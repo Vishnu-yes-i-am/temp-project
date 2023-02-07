@@ -1,0 +1,877 @@
+/* Global Variable */
+:root {
+    --blue: #0000FF;
+    --white: #ffffff;
+    --para:#2C2C2C;
+    --input:#F8F8F8;
+    --blueInput:#6262FF;
+}
+/*fonts*/
+@font-face {
+    font-family: regular;
+    src: url('../font/SFPRODISPLAYREGULAR.woff');
+  }
+  @font-face {
+    font-family: bold;
+    src: url('../font/SFPRODISPLAYBOLD.woff');
+  }
+  @font-face {
+    font-family: med;
+    src: url('../font/SFPRODISPLAYMEDIUM.woff');
+  }
+  @font-face {
+    font-family: italic;
+    src: url('../font/SFPRODISPLAYSEMIBOLDITALIC.woff');
+  }
+
+/* Navbar */
+.login_nav.navbar>.container-fluid
+{
+    display: initial;
+    text-align: center;
+}
+.loginNav button {
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    padding: 10px 20px;
+    width: 100%;
+}
+.login_nav.navbar>.container-fluid a
+{
+    text-align: center;
+}
+nav.navbar.navbar-expand-lg.navbar-light.login_nav {
+    padding: 12px;
+}
+.navbar-expand-lg .navbar-collapse
+{
+    justify-content: flex-end;
+}
+.dropdown-menu[data-bs-popper]
+{
+    right: 0px !important;
+    left: initial !important;
+    top: initial !important;
+}
+a.nav-link {
+    color: #fff !important;
+    font-family: med;
+    margin: 0px 10px;
+}
+
+a.nav-link span {
+    margin-left: 6px;
+}
+
+
+ul.dropdown-menu.show {
+    border: none;
+    color: #e5e5e5;
+    font-family: 'med';
+    box-shadow: -1px 1px 15px -8px #8282e7;
+}
+
+
+ul.dropdown-menu li {
+
+    color: #e5e5e5;
+    
+}
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.main_nav {
+    background: var(--blue) !important;
+}
+img.logo {
+    width: 200px;
+}
+
+.loginNav button {
+    background-color: var(--white);
+    color: var(--blue);
+    font-family: 'med';
+}
+
+/* Main Section */
+section.main
+{
+    background-image: url(../img/Image\ 1.png);
+    background-attachment: scroll;
+    width: 100%;
+    height: 93vh;
+    background-size: cover;
+}
+
+.close i {
+    margin-bottom: 25px;
+}
+.login-modal.modal-dialog{
+    top: calc(50% - 200px);
+    width: 30%;
+    max-width: unset;
+}
+.loginPageBg .modal-backdrop{
+    background-color: #681b1b00 !important;
+}
+.close {text-align: right;}
+
+form .form-group input[type="text"], input[type="password"] {
+    padding: 9px 12px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: var(--blue);
+    font-family: med;
+    border: none;
+    background-color: var(--input);
+}
+form .form-group input[type="text"]:last-child, input[type="password"]:last-child
+{
+    margin-bottom: 7px;
+}
+.form-group label {
+    font-size: 15px;
+    font-family: 'bold';
+    margin-bottom: 22px;
+}
+
+form button {
+    color: var(--white);
+    border-radius: 5px;
+    border: none;
+    font-family: 'bold';
+    padding: 9px;
+    width: 100%;
+    background-color: var(--blue);
+}
+
+body.grayBg {
+    background-color: #F8F8F8;
+}
+/*Importr Home Page*/
+.uploadArea {
+    background-color: var(--white);
+    margin: 10px 10px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.uploadArea .content {border: 2px dashed #e5e5e5;border-radius: 20px;/* margin:20px; */height: 74vh;display: flex;}
+.centerContent {
+    width: fit-content;
+    display: block;
+    margin: auto;
+}
+
+.imgRef {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.imgRef img {
+    width: 60px;
+}
+
+.uploadText {
+    text-align: center;
+}
+
+.uploadText h5 span,.uploadText h5 {
+    font-size: 28px;
+    font-family: bold;
+    color: #C2C2C2;
+    margin-bottom: 10px;
+}
+
+.uploadText p {
+    font-size: 16px;
+    font-family: regular;
+    color: #C2C2C2;
+}
+.uploadText h5 a {
+    text-decoration: none;
+    color: var(--blue);
+}
+.titleText h2 {
+    font-size: 30px;
+    font-family: bold;
+    color: #000000;
+    margin-bottom: 22px;
+}
+.modal .form-group input[type="text"], input[type="password"]
+{
+    width: -webkit-fill-available;
+    margin-bottom: 10px;
+}
+.resetPassword form button {
+    margin-top: 35px;
+}
+.resetpassword .close {
+    margin-bottom: 25px;
+    border: none;
+}
+.resetpassword .modal-body {
+    padding: 12px 30px 50px 30px;
+}
+/*Import Home Page End*/
+
+/*Import table Page*/
+.tableContent {
+    background-color: var(--white);
+    margin: 10px 0px 0px 10px;
+    border-radius: 20px;
+}
+.row.tableTop {
+    padding: 0px 15px;
+}
+
+.row.tableTop h5 {
+    font-size: 20px;
+    font-family: bold;
+    margin-top: 12px;
+}
+
+.col-md-6.uploadFile {
+    background-color: #fff !important;
+    text-align: right;
+    background: none;
+}
+.col-md-6.uploadFile button {
+    font-size: 16px;
+    font-family: 'regular';
+    color: var(--blue);
+}
+.table-responsive.ImportData {
+    padding: 15px;
+}
+
+td {font-size: 15px;font-family: 'regular';color: #222222 !important;padding: 15px !important;}
+
+
+.table-responsive.ImportData thead tr th {
+    font-size: 14px;
+    padding: 15px;
+    font-family: 'bold';
+}
+th {
+    padding: 15px !important;
+}
+.ImageUpload {border: 2px dashed #e5e5e5e5;border-radius: 20px;}
+
+.modal-body .uploadArea
+{
+    margin: 0;
+    padding: 0;
+}
+.modal-body .uploadArea .content
+{
+    height: 50vh;
+}
+.tableContent .modal{
+    top:20% !important;
+}
+ .modal-content
+{
+    border-radius: 20px !important;
+  
+}
+.modal-backdrop
+{
+    background-color: #0000ffad !important;
+}
+/*Import table Page End*/
+/*User Page*/
+.row.userpage {
+    background-color: var(--white);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.userlist {
+    background-color: #f8f8f8;
+    width: auto;
+    border-radius: 10px;
+    margin: 7px 0px;
+}
+.row.userListHeading {
+    padding: 18px 14px;
+}
+
+.row.userListHeading .listTiltle h5 {
+    display: flex;
+    font-family: 'bold';
+}
+
+.row.userListHeading .listAction {
+    display: flex;
+    float: right;
+}
+
+.row.userListHeading .listAction i {
+    margin: 0px 6px;
+    font-size: 18px;
+    color: var(--blue);
+}
+
+.row.userpage ul.users {
+    font-family: regular;
+    list-style: none;
+    width: 290px;
+    padding: 0;
+}
+
+ul.users li {
+    padding: 7px 14px;
+}
+
+ul.users li.active {
+    background-color: var(--white);
+    border-left: 2px solid var(--blue);
+}
+.userpage .userDetails {
+    padding: 25px;
+}
+
+.UserName h3 {
+    font-family: 'bold';
+    font-size: 23px;
+}
+
+.userDetails form {
+    margin: 33px 0px;
+}
+.userDetails form .form-group label {
+    margin-bottom: 5px;
+}
+
+.userDetails form .form-group {
+    display: grid;
+    margin-bottom: 20px;
+}
+
+.mailBtn button {
+    font-family: 'regular';
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.userDetails form .form-group input[type="email"] {
+    padding: 9px 12px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: var(--blue);
+    font-family: med;
+    border: none;
+    background-color: var(--input);
+}
+label.funcTitle {
+    font-family: 'med';
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.col-md-6.funcForm {
+    padding: 0px 50px;
+}
+
+.col-md-6.funcForm .form-group {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.col-md-6.funcForm .form-group label {
+    color: #98A1B0;
+    font-family: 'regular';
+}
+
+
+.userDetails form .submitChanges button {
+    display: block;
+    padding: 10px 17px;
+    width: fit-content;
+    margin-top: 50px;
+    margin-left: auto;
+}
+
+.submitChanges {
+    text-align: right;
+}
+
+.userAccountAction button {
+    background-color: #f8f8f8;
+    color: var(--blue);
+    font-family: 'regular';
+    width: 145px;
+}
+
+.userAccountAction {display: flex;justify-content: space-between;margin-top: 50px;margin-left: auto;}
+
+.userAccountAction button.userDelete {
+    color: #f00;
+}
+.searchbar input[type="text"] {
+    padding: 9px 50px 9px 12px;
+    margin-bottom: 5px;
+    width: 100%;
+    border-radius: 10px;
+    color: #000;
+    font-family: med;
+    border: none;
+    background-color: var(--white);
+}
+
+
+.searchbar {
+    display: flex;
+}
+
+.filterIcon {
+    width: fit-content;
+    top: 2px;
+    padding: 7px 11px;
+    height: fit-content;
+    background-color: var(--blue);
+    position: relative;
+    border-radius: 9px;
+    color: var(--white);
+}
+.row.newUserAdd .userTitle h4 {
+    font-size: 25px;
+    font-family: 'bold';
+    margin-bottom: 18px;
+}
+
+.row.newUserAdd form .form-group label {
+    margin-bottom: 5px;
+}
+
+.row.newUserAdd form .form-group {
+    margin-bottom: 20px;
+}
+
+.passwordIns span {
+    font-size: 15px;
+    font-family: 'bold';
+    margin-bottom: 22px;
+}
+
+.passwordIns p {
+    font-size: 12px;
+    font-family: 'med';
+    color: #98A1B0;
+}
+
+
+.row.newUserAdd .funcForm .form-group {
+    margin-bottom: 0px;
+}
+.row.newUserAdd .addUserBtn {
+    display: flex;
+    margin-top: 50px;
+    float: right;
+}
+.row.newUserAdd .addUserBtn button {
+    width: 120px;
+    margin-left: 10px;
+    font-family: 'regular';
+}
+
+.row.newUserAdd .addUserBtn button:first-child {background-color: var(--input);color: var(--blue);}
+.newUserModal.modal-body {
+    padding: 14px 30px 30px 30px;
+}
+
+.row.newUserAdd .funcForm {
+    padding: 0px 40px;
+}
+
+/*User Page End*/
+/* Search Page */
+.searchTab .row form {
+    display: flex;
+}
+
+.searchTab .row form .form-group {
+    display: flex;
+}
+
+section.searchNavTab {
+    background: var(--white);
+}
+
+.searchTab .row form .form-group input[type="text"] {
+    margin-right: 10px;
+    width: 290px;
+}
+
+.searchTab .row form .form-group .searchBtn button {
+    padding: 10px 14px;
+    border-radius: 10px;
+}
+
+.searchTab .row form .form-group .searchBtn {
+    margin-right: 10px;
+}
+
+.searchTab .row form  .powerSubmit button {
+    font-size: 15px;
+    padding: 11px 20px;
+    border-radius: 8px;
+    background-color: var(--input);
+    color: var(--blue);
+}
+.searchSettings {
+    left: calc(50vw - 400px);
+    padding: 15px 20px;
+    position: absolute;
+    box-shadow: 0px 1px 16px -11px #0000ff78;
+    border-radius: 0px  0px 20px 0px;
+    width: 800px;
+    background-color: var(--white);
+}
+
+.settingTabShow {background-color: var(--white);border-radius: 0px 20px 20px 0px;color: var(--blue);}
+form .settingTitle h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'bold';
+}
+
+form.recordSetting .form-group {
+    margin-bottom: 10px;
+}
+.submitSetting {
+    margin-top: 30px;
+    float: right;
+}
+
+.submitSetting button {
+    padding: 15px 30px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+.searchTab {
+    padding: 10px 30px;
+}
+.settingTabShow i.fas.fa-times {
+    display: none;
+}
+.settingTabShow i.fas.fa-cog {
+    display: initial;
+}
+.settingFade
+{
+    animation: settingfade 0.6s linear 0s initial;
+    transition: 0.6s ease-in;
+}
+.settingFadeout
+{
+    animation: settingfade 0.6s linear 0s initial reverse;
+   
+    transition: 0.6s ease-in;
+}
+.settingFade i.fas.fa-times
+{
+    padding: 3px;
+    display: initial;
+}
+.settingFade i.fas.fa-cog
+{
+    display: none;
+}
+.col-md-6.searchresult h5 {
+    font-family: 'regular';
+    font-size: 23px;
+}
+
+.col-md-6.searchresult h5 span {
+    font-family: 'bold';
+}
+.col-md-6.uploadFile select {
+    padding: 9px 12px;
+    margin-bottom: 5px;
+    outline: none;
+    border-radius: 10px;
+    color: var(--blue);
+    font-family: med;
+    border: none;
+    background-color: var(--input);
+}
+form.recordSetting .form-group select {
+    padding: 9px 12px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: var(--blue);
+    font-family: med;
+    border: none;
+    background-color: var(--input);
+}
+
+
+
+form.recordSetting .form-group label {display: block;}
+
+form.recordSetting .form-group label {
+    margin-bottom: 10px;
+}
+@keyframes settingfade {
+    from {left: 400px;}
+    to {left: 0px;}
+  } 
+
+/*  Search Page End */
+/*record Page*/
+.row.showRecord {
+    border-radius: 20px;
+    background-color: var(--white);
+    margin: 13px 20px;
+    padding: 16px 20px;
+}
+
+.singleRecord .record h5 {
+    margin: 0;
+    font-family: 'med';
+    font-size: 20px;
+}
+
+.singleRecord {
+    padding-left: 50px;
+}
+
+.singleRecord .record p {
+    font-size: 15px;
+    font-family: 'med';
+    color: #98A1B0;
+    margin-bottom: 15px;
+}
+
+.singleRecord .row .record h5 {
+    font-size: 20px;
+    font-family: 'regular';
+}
+
+.singleRecord .row .record p {
+    margin-bottom: 10px;
+}
+.recordTitle h4 {
+    font-family: 'med';
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.ImageView img {
+    border-radius: 10px;
+}
+
+.zoomBtn button {
+    position: absolute;
+}
+.zoomBtn {position: absolute;width: inherit;}
+
+.zoomBtn button {
+    padding: 10px 15px;
+    color: #929292;
+    background: none;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 14px;
+    left: 342px;
+    background-color: var(--white);
+    border: none;
+}
+.UserSubmitBtn a {
+    margin: 0px 10px;
+    color: var(--blue);
+    border-radius: 5px;
+    border: none;
+    font-family: 'med';
+    font-size: 15px;
+    padding: 14px 15px;
+    width: 100%;
+    background-color: #F8F8F8;
+    text-decoration: none;
+}
+.UserSubmitBtn {
+    margin-top: 30px;
+}
+
+.UserSubmitBtn .deletBtn {
+    color: var(--white);
+    background-color: var(--blue);
+}
+/*Record End*/
+/* test */
+
+.quantity {
+    position: relative;
+    /* display: flex; */
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+  
+  .quantity input {
+    width: 100%;
+    height: 42px;
+    line-height: 1.65;
+    float: left;
+    display: block;
+    margin: 0;
+    font-size: 1rem;
+    padding: 9px 12px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: var(--blue);
+    font-family: med;
+    border: none;
+    background-color: var(--input);
+  }
+  
+  .quantity input:focus {
+    outline: 0;
+  }
+  
+  .quantity-nav {
+    float: left;
+    position: relative;
+    height: 42px;
+  }
+  
+  .quantity-button {
+    position: relative;
+    cursor: pointer;
+    border: none;
+    /* border-left: 1px solid rgba(0, 0, 0, 0.08); */
+    width: 21px;
+    text-align: center;
+    color: #333;
+    font-size: 13px;
+    font-family: "FontAwesome" !important;
+    line-height: 1.5;
+    padding: 0;
+    background: none;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  
+  .quantity-button:active {
+    background: #EAEAEA;
+  }
+  
+  .quantity-button.quantity-up {
+    position: absolute;
+    height: 50%;
+    color: var(--blue);
+    top: 0px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.08); */
+    font-family: "FontAwesome";
+    border-radius: 0 4px 0 0;
+    line-height: 1.6;
+  }
+  
+  .quantity-button.quantity-down {
+    position: absolute;
+    bottom: 0px;
+    color: var(--blue);
+    height: 50%;
+    font-family: "FontAwesome";
+    border-radius: 0 0 4px 0;
+  }
+  .imageModal .modal-content {
+    height: 90vh;
+    background: none;
+    border: none;
+}
+.modal-header.imageclose button {
+    color: var(--white);
+    background: none;
+    border: none;
+    font-size: 26px;
+    position: absolute;
+    right: 12px;
+    margin-bottom: 0px;
+}
+
+.modal-header.imageclose {
+    border: none;
+}
+.drift-zoom-pane.drift-opening, .drift-zoom-pane.drift-closing {
+    border-radius: 10px !important;
+}
+
+/* Test End */
+/* Edit User Page */
+.editUser {
+    padding: 16px 25px;
+    margin: 14px 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.editUser h4 {
+    font-family: 'bold';
+    font-size: 20px;
+    color: #222222;
+    margin-bottom: 25px;
+}
+
+.editUser form .form-group {
+    display: grid;
+    margin-bottom: 25px;
+}
+
+.editUser form .form-group label {
+    margin-bottom: 5px;
+}
+
+.editUser form .form-group input[type="Date"] {
+    padding: 9px 12px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: var(--blue);
+    font-family: med;
+    border: none;
+    background-color: var(--input);
+}
+
+.editUser form .form-group textarea {
+    padding: 9px 12px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: var(--blue);
+    font-family: med;
+    border: none;
+    background-color: var(--input);
+}
+.editUser form .editSubmit {
+    display: flex;
+}
+
+.editUser form .editSubmit button {
+    margin: 0px 10px;
+}
+
+/* Edit User End */
+/* Media Qeuries*/
+@media (min-width: 576px)
+{
+.tableContent .modal-dialog {
+    max-width: 761px !important;
+}
+.resetpassword .modal-dialog{
+    max-width: 400px !important;
+   
+}
+.imageModal .modal-dialog {
+    max-width: 80% !important;
+}
+}

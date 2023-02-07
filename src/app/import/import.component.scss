@@ -1,0 +1,29 @@
+.card{
+    &.file-list-card{
+        margin: 10px 10px 10px 0px;
+        .card-header{
+            font-weight: bold;
+            color: var(--blue);
+        }
+    }
+}
+button{
+    &.row-action{
+        float: right;
+        padding: 0px;
+        width: 20px;
+    }
+    &.submit{
+        color: var(--white);
+        border-radius: 5px;
+        border: none;
+        font-family: 'bold';
+        padding: 9px;
+        width: 100%;
+        background-color: var(--blue);
+    }
+}
+.template-link{
+    text-decoration: none;
+    color: var(--blue);
+}

@@ -1,0 +1,74 @@
+<body class="grayBg">
+	<section class="searchNavTab">
+		<app-search-filter-form [searchFilter]="searchFilter" (powerSearch)="doPowerSearch()"></app-search-filter-form>
+		<app-search-settings-form [searchSettingsInput]="searchSettings" (settingsSubmit)="settingsSubmit($event)"></app-search-settings-form>
+		<div class="searchTab">
+			<div class="row">
+				<div class="col-md-6">
+					<form action="">
+						<div class="form-group">
+							<input type="text" class="quick-search" name="quickSearch" [(ngModel)]="searchState.quickSearchQuery" placeholder="Quick Search" (keyup)="autoSuggest()">
+							<div class="searchBtn">
+								<button (click)="filter()"><i class="fas fa-search"></i></button>
+							</div>
+						</div>
+						<div class="powerSubmit">
+							<button (click)="openPowerSearch()">Power Search</button>
+						</div>
+						<div class="settingTabShow" (click)="openSetting()">
+							<i class="fas fa-cog"></i>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-4 searchresult" *ngIf="searchState.searchType === 'quick'">
+					<h4>Quick result for <span>“{{searchState.quickSearchQuery}}”</span></h4>
+				</div>
+				<div class="col-md-4 searchresult" *ngIf="searchState.searchType === 'power'">
+					<h4>Power Search Results</h4>
+				</div>
+				<div class="col-md-4 searchresult" *ngIf="searchState.searchType === 'autosuggest'">
+					<h4>Sugggestions</h4>
+				</div>
+				<div class="col-md-4 searchresult" *ngIf="searchState.searchType === 'custom'">
+					<h4>Filtered Quick result 
+						<ng-template [ngIf]="searchState.quickSearchQuery">
+							for <span>“{{searchState.quickSearchQuery}}”</span>
+						</ng-template>
+					</h4>
+				</div>
+				<div class="col-md-2 searchCount" *ngIf="searchState.searchType">
+					<h4>{{searchState.searchCount}} item(s)</h4>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="main_home">
+		<app-search-records 
+			[searchRecords]="searchRecords"
+			[searchState]="searchState"
+			[userPermissions]="userPermissions"
+			(view)="view($event, singleRecordModal)"
+			(edit)="edit($event, editSingleRecordModal)"
+			(download)="download($event)"
+			(delete)="delete($event)"
+			(filter)="filter()"
+			(paginate)="paginate($event)"
+		></app-search-records>
+		<ng-template #singleRecordModal>
+			<app-single-record 
+				[singleRecord]="singleRecord"
+				[userPermissions]="userPermissions"
+				(edit)="edit($event, editSingleRecordModal)"
+				(download)="download($event)"
+				(delete)="delete($event)"
+			></app-single-record>
+		</ng-template>
+		<ng-template #editSingleRecordModal>
+			<app-edit-single-record 
+				[editSingleRecord]="editSingleRecord"
+				(closeEdit)="modalRef.hide()"
+				(editsSaved)="editsSaved($event)"
+			></app-edit-single-record>
+		</ng-template>
+	</section>
+</body>

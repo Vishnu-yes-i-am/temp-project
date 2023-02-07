@@ -1,0 +1,82 @@
+.full-width{
+    margin-right: 0px;
+    .search-container{
+        padding-right: 0px;
+        .tableContent{
+            .ImportData{
+                overflow: auto; 
+                max-height: 80vh;
+                font-size: 0.875rem;
+                &.power{
+                    th{
+                        input{
+                            display: none;
+                        }
+                    }
+                }
+                thead{
+                    th{
+                        position: sticky;
+                        top: 0;
+                        background: white;
+                        opacity: 1;
+                        z-index: 1;
+                        padding: 0px 5px 5px !important;
+                        .form-control{
+                            min-width: 3rem;
+                            &.small-search-field{
+                                max-width: 4rem;
+                            }
+                            &:not(.small-search-field){
+                                min-width: 4rem;
+                                &.large-search-field{
+                                    min-width: 8rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                tbody{
+                    border-top: none;
+                    td{
+                        padding: 15px 5px !important;
+                        .btn-light{
+                            &:hover{
+                                background-color: white;
+                            }
+                        }
+                    }
+                    .notes{
+                        max-height: 80px;
+                        margin-bottom: 0px;
+                        overflow-y: scroll;
+                        &::-webkit-scrollbar { 
+                            display: none; 
+                        }
+                        scrollbar-width: none;
+                    }
+                }
+                .record-row{
+                    .image{
+                        height: 80px;
+                        width: fit-content;
+                    }
+                    .dropdown-toggle{
+                        &::after{
+                            content: none;
+                        }
+                    }
+                }
+                &.power{
+                    .form-control{
+                        display: none;
+                    }
+                }
+            }
+        }
+        .pagination-container{
+            width: fit-content;
+        }
+    }
+}
+

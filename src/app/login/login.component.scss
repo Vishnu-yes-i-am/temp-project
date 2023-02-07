@@ -1,0 +1,52 @@
+
+form .form-group input 
+{
+    padding: 9px 12px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: var(--blue);
+    font-family: med;
+    border: none;
+    background-color: var(--input);
+}
+.modal .form-group input:not([type="checkbox"])
+{
+    width: -webkit-fill-available;
+    margin-bottom: 10px;
+}
+.main_login {
+    background-color: var(--blue);
+    .titleLogin{
+        color: var(--white);
+        h2{
+            font-size: 40px;
+            font-family: bold;
+        }
+        p{
+            font-size: 15px;
+            font-family: regular;
+        }
+    } 
+    .form-group{
+        label{
+            color: var(--white);
+        }
+        input
+        {
+            color: var(--white);
+            background-color: var(--blueInput);
+            ::placeholder{
+                color: #98A1B0;
+            }
+        }
+    } 
+    form{
+        button{
+            background-color: var(--white);
+            color: var(--blue);
+        }
+    }
+    .close{
+        display: none;
+    }
+}

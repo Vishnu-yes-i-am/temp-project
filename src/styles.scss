@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+.full-width{
+    width: 100vw;
+}
+.searchNavTab{
+    .searchSettings{
+        z-index: 10;
+        &.settingFadeout{
+            top: -350px;
+        }
+        &.settingFade{
+            top: 0px;
+        }
+    }
+}
+
+.spinner-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .spinner-border{
+      color: var(--blue)
+    }
+  }

@@ -1,0 +1,107 @@
+<div class="row showRecord">
+	<div class="recordTitle">
+		<h4>{{singleRecord.File}}</h4>
+	</div>
+    <div class="row">
+        <div class="col-md-12">
+			<img id="zoomHover" class="demo-trigger img-fluid" [src]="singleRecord.fullSizeImgSrc" alt="" (contextmenu)="disallow($event)"/>
+	    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row justify-content-between header">
+                <div class="col-md-6">
+                    <h4 class="detail">Metadata: </h4>
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button class="btn btn-primary" (click)="editClicked(singleRecord)" *ngIf="hasPermission('Metadata Editor')">
+                            <i class="far fa-edit"></i>
+                            Edit
+                        </button>
+                        <button class="btn btn-primary" (click)="downloadClicked(singleRecord)" *ngIf="hasPermission('Download')">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </button>
+                        <button class="btn btn-danger" (click)="deleteClicked(singleRecord)" *ngIf="hasPermission('Delete Images')">
+                            <i class="far fa-trash-alt"></i>
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="singleRecord">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="record">
+                            <h5>File</h5>
+                            <p>{{singleRecord.File}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>MM/DD/YYYY</h5>
+                            <p>{{singleRecord.Month}}/{{singleRecord.Day}}/{{singleRecord.Year}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>RR</h5>
+                            <p>{{singleRecord.RR}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Equipment</h5>
+                            <p>{{singleRecord.Equipment}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Builder</h5>
+                            <p>{{singleRecord.Builder}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Model</h5>
+                            <p>{{singleRecord.Model}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Dir</h5>
+                            <p>{{singleRecord.Dir}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Location</h5>
+                            <p>{{singleRecord.Location}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="record">
+                            <h5>Model</h5>
+                            <p>{{singleRecord.Model}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Type</h5>
+                            <p>{{singleRecord.Type}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Collection</h5>
+                            <p>{{singleRecord.Collection}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Owner</h5>
+                            <p>{{singleRecord.Owner}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Published</h5>
+                            <p>{{singleRecord.Published}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Notes</h5>
+                            <p>{{singleRecord.Notes}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>Scan Tech</h5>
+                            <p>{{singleRecord.ScanTech}}</p>
+                        </div>
+                        <div class="record">
+                            <h5>State</h5>
+                            <p>{{singleRecord.State}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

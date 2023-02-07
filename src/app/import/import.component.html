@@ -1,0 +1,189 @@
+<body class="grayBg">
+	<!--content-->
+		<section class="main_home">
+			<div class="row full-width">
+				<div class="col-md-9" *ngIf="addedFiles.length === 0">
+					<div class="uploadArea">
+						<div class="content" appDragDrop (files)="filesDropped($event)">
+							<input type="file" style="display:none" (change)="onFileSelected($event)" #fileUpload multiple />
+							<div class="centerContent">
+								<div class="imgRef">
+									<img src="assets/img/Rectangle 5.png" alt="">
+									<img src="assets/img/Group 3.png" alt="">
+								</div>
+								<div class="uploadText">
+									<h5> <span class="changeHeader"> Drag & Drop Your CSV and Image Files Here</span>,<a href="javascript:void(0);" (click)="uploadClick();" class="chooseBtn"> or Browse</a></h5>
+									<p>After dropping files, red highlight would mean unmapped and yellow would mean modified. To download CSV template click <a href="assets/template.csv" class="template-link">here</a></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9" *ngIf="addedFiles.length > 0">
+					<div class="tableContent">
+						<div class="row tableTop">
+							<div class="col-md-6">
+								<h5>File Name</h5>
+							</div>
+							<div class="col-md-6 uploadFile">
+								<button
+									type="button" class="btn" (click)="openModal(addFilesModal)"
+									><i class="fas fa-cloud-upload-alt"></i>Upload File
+								</button>
+							</div>
+						</div>
+						<div class="table-responsive ImportData">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>&nbsp;</th>
+										<th scope="col">RR</th>
+										<th scope="col">Equipment</th>
+										<th scope="col">Builder</th>
+										<th scope="col">Model</th>
+										<th scope="col">Dir</th>
+										<th scope="col">Location</th>
+										<th scope="col">State</th>
+										<th scope="col">Scan Tech</th>
+										<th scope="col">Type</th>
+										<th scope="col">Photographer's Name</th>
+										<th scope="col">Collection</th>
+										<th scope="col">Owner</th>
+										<th scope="col">Notes</th>
+										<th scope="col">Published</th>
+										<th scope="col">Month</th>
+										<th scope="col">Date</th>
+										<th scope="col">Year</th>
+										<th scope="col">ID</th>
+										<th scope="col">File</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr *ngFor="let entry of importList; index as i" class="{{entry.hasNoMapping ? 'bg-danger' : ''}}">
+										<td>
+											<button class="btn btn-light row-action">
+												<i class="far fa-edit" (click)="editImportListEntryOpen(i)"></i>
+											</button> 
+											<button class="btn btn-light row-action">
+												<i class="far fa-trash-alt" (click)="removeImportListEntry(i)"></i>
+											</button> 
+										</td>
+										<td>{{entry.RR}}</td>
+										<td>{{entry.Equipment}}</td>
+										<td>{{entry.Builder}}</td>
+										<td>{{entry.Model}}</td>
+										<td>{{entry.Dir}}</td>
+										<td>{{entry.Location}}</td>
+										<td>{{entry.State}}</td>
+										<td>{{entry.ScanTech}}</td>
+										<td>{{entry.Type}}</td>
+										<td>{{entry.PhotographersName}}</td>
+										<td>{{entry.Collection}}</td>
+										<td>{{entry.Owner}}</td>
+										<td>{{entry.Notes}}</td>
+										<td>{{entry.Published}}</td>
+										<td>{{entry.Month}}</td>
+										<td>{{entry.Day}}</td>
+										<td>{{entry.Year}}</td>
+										<td>{{entry.ID}}</td>
+										<td>{{entry.File}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="card file-list-card">
+						<div class="card-header">
+							Added Files
+						</div>
+						<ul class="list-group list-group-flush" *ngIf="addedFiles.length > 0">
+							<li class="list-group-item {{addedFile.hasNoMapping && !addedFile.hasDataFilled ? 'bg-danger' : ''}} {{addedFile.isDirty ? 'bg-warning' : ''}}" *ngFor="let addedFile of addedFiles; index as i;">{{addedFile.fileHandle.file.name}} 
+								<button class="btn btn-light row-action" (click)="removeAddedFile(i)">
+								<i class="far fa-trash-alt"></i>
+								</button> 
+							</li>
+						</ul>
+						<div class="list-group-item" *ngIf="addedFiles.length === 0">
+							(Empty)
+						</div>
+						<div class="card-footer" *ngIf="addedFiles.length > 0">
+							<button class="submit" (click)="doSubmit()">Upload</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row full-width" *ngIf="addedFiles.length > 0 && !metaDataForm.show">
+				<div class="col-md-12" >
+					<div class="uploadArea">
+						<div class="content" appDragDrop (files)="filesDropped($event)">
+							<input type="file" style="display:none" (change)="onFileSelected($event)" #fileUpload multiple />
+							<div class="centerContent">
+								<div class="imgRef">
+									<img src="assets/img/Rectangle 5.png" alt="">
+									<img src="assets/img/Group 3.png" alt="">
+								</div>
+								<div class="uploadText">
+									<h5> <span class="changeHeader"> Drag & Drop Your CSV and Image Files Here</span>,<a href="javascript:void(0);" (click)="uploadClick();" class="chooseBtn"> or Browse</a></h5>
+									<p>After dropping files, red highlight would mean unmapped and yellow would mean modified. To download CSV template click <a href="assets/template.csv" class="template-link">here</a></p>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="editUser" *ngIf="metaDataForm.show">
+				<h4>EDIT DATA</h4>
+				<form action="">
+					<app-image-metadata-form [imageMetaDataForEdit]="metaDataForm"></app-image-metadata-form>
+					<hr>
+					<div class="row">
+						<div class="col-md-9">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">Repeat entries for</span>
+								</div>
+								<input type="number" class="form-control" [(ngModel)]="metaDataForm.replicate" [ngModelOptions]="{standalone: true}">
+								<div class="input-group-append">
+									<span class="input-group-text">following rows in grid</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="editSubmit">
+								<button (click)="closeEdit()">Cancel</button>
+								<button (click)="saveEdit()">Save</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<ng-template #addFilesModal>
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="uploadArea">
+									<div class="content" appDragDrop (files)="filesDropped($event)">
+										<div class="centerContent">
+											<div class="imgRef">
+												<img src="assets/img/Group 3.png" alt="">
+											</div>
+											<div class="uploadText">
+												<h5> <span class="changeHeader">Drag & Drop Your CSV and Image Files Here,</span><a href="javascript:void(0);" class="chooseBtn" (click)="uploadClick();"> or Browse</a></h5>
+												<p>After dropping files, red highlight would mean unmapped and yellow would mean modified. To download CSV template click <a href="assets/template.csv" class="template-link">here</a></p>
+												<input type="file" name="" id="" hidden>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ng-template>
+		</section>
+	</body>

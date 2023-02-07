@@ -1,0 +1,158 @@
+<div class="row full-width">
+    <div class="col-md-12 search-container">
+        <div class="tableContent">
+            <div class="ImportData {{searchState.searchType}}">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th scope="col" *ngIf="searchState.searchType" >
+                                <label>Image</label>
+                            </th>
+                            <th scope="col">
+                                <label>RR</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.RR" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Month</label>
+                                <input type="text" class="form-control form-control-sm small-search-field" [(ngModel)]="searchRecords.customSearchForm.Month" (keyup)="filterInput($event)" />
+                            </th>
+                            <th scope="col">
+                                <label>Date</label>
+                                <input type="text" class="form-control form-control-sm small-search-field" [(ngModel)]="searchRecords.customSearchForm.Day" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Year</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.Year" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>ID</label>
+                                <input type="text" class="form-control form-control-sm small-search-field" [(ngModel)]="searchRecords.customSearchForm.ID" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Location</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.Location" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>State</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.State" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Equipment</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.Equipment" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Model</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.Model" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>dir</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.Dir" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Photographer’s Name</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.PhotographersName" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>File</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.File" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Scan Tech</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.ScanTech" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Owner</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.Owner" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Collection</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.Collection" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Published</label>
+                                <input type="text" class="form-control form-control-sm" [(ngModel)]="searchRecords.customSearchForm.Published" (keyup)="filterInput($event)"/>
+                            </th>
+                            <th scope="col">
+                                <label>Notes</label>
+                                <input type="text" class="form-control form-control-sm large-search-field" [(ngModel)]="searchRecords.customSearchForm.Notes" (keyup)="filterInput($event)"/>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of searchRecords.searchResults.items" class="record-row" (click)="rowClicked(item, $event)">
+                        	<td class="action-buttons-container">
+                            	<ng-template [ngIf]="searchState.searchType !== 'autosuggest'">
+                                	<div class="btn-group" dropdown>
+                                    	<button dropdownToggle type="button" class="btn btn-light dropdown-toggle"
+                                        	aria-controls="dropdown-basic">
+                                        	<svg _ngcontent-xct-c99="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="bi bi-three-dots-vertical">
+	                                            <path _ngcontent-xct-c99="" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z">
+    	                                        </path>
+        	                                </svg>
+            	                        </button>
+                	                    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                    	                    role="menu" aria-labelledby="button-basic">
+                        	                <li role="menuitem">
+                            	                <a class="dropdown-item {{checkAccess('Metadata Editor')}}" href="javascript:void(0);" (click)="editClicked(item)">
+                                	            <i class="far fa-edit"></i>
+                                    	        Edit
+                                        	    </a>
+                                        	</li>
+                                        	<li class="divider dropdown-divider"></li>
+                                        	<li role="menuitem">
+	                                            <a class="dropdown-item btn-danger {{checkAccess('Delete Images')}}" href="javascript:void(0);" (click)="deleteClicked(item)">
+    	                                        <i class="far fa-trash-alt"></i>
+        	                                    Delete
+            	                                </a>
+                	                        </li>
+                    	                </ul>
+                        	        </div>
+                            	</ng-template>
+	                            <button class="btn btn-light row-action" (click)="downloadClicked(item)" [disabled]="checkAccess('Download')">
+    	                        	<i class="fas fa-download"></i>
+        	                    </button> 
+            	            </td>
+                	        <td scope="col" *ngIf="searchState.searchType">
+                    	        <div class="spinner-container" *ngIf="!item.imgSrc">
+                        	        <div class="spinner-border" role="status">
+                            	        <span class="sr-only">Loading...</span>
+                                	</div>
+	                            </div>
+    	                        <img [src]="item.imgSrc" alt="Thumbnail unavailable" class="image" (contextmenu)="disallow($event)" *ngIf="item.imgSrc || item.imgSrc === 'ERROR'">
+        	                </td>
+            	            <td>{{item.RR}}</td>
+                	        <td>{{item.Month}}</td>
+                    	    <td>{{item.Day}} </td>
+                        	<td>{{item.Year}}</td>
+                        	<td>{{item.ID}}</td>
+	                        <td>{{item.Location}}</td>
+    	                    <td>{{item.State}}</td>
+        	                <td>{{item.Equipment}}</td>
+            	            <td>{{item.Model}}</td>
+                	        <td>{{item.Dir}}</td>
+                    	    <td>{{item.PhotographersName}}</td>
+                        	<td>{{item.File}}</td>
+                        	<td>{{item.ScanTech}}</td>
+                        	<td>{{item.Owner}}</td>
+                        	<td>{{item.Collection}}</td>
+	                        <td>{{item.Published}}</td>
+    	                    <td>
+        	                    <p class="notes">{{item.Notes}}</p>
+            	            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-12 pagination-container" >
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-secondary" (click)="onPaginate('previous')" [disabled]="searchRecords.pagination.isPreviousDisabled" >Previous</button>
+                    <button type="button" class="btn {{searchRecords.pagination.activeIndex === page - 1 ? 'btn-secondary' : 'btn-outline-secondary'}}" (click)="onPaginate(page)" *ngFor="let page of searchRecords.pagination.pages; index as i;">{{i + 1}}</button>
+                    <button type="button" class="btn btn-outline-secondary" (click)="onPaginate('next')" [disabled]="searchRecords.pagination.isNextDisabled">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

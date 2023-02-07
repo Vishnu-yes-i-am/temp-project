@@ -1,0 +1,31 @@
+<div class="searchSettings" [ngClass]="searchSettingsInput.isOpen ? 'settingFade' : 'settingFadeout'">
+	<div class="settingTabShow" (click)="onCancel()">
+		<i class="fas fa-times"></i>
+	</div>
+	<form action="" class="recordSetting">
+		<div class="settingTitle">
+			<h4>Search Setting</h4>
+		</div>
+		<div class="form-row">
+			<div class="form-group quantity" *ngIf="searchSettingsForm.enableAutoSuggest">
+				<label class="form-control-label">Number of autosuggest results</label>
+				<input type="number" name="suggestCount" [(ngModel)]="searchSettingsForm.quickSearchCount">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group quantity">
+				<label class="form-control-label">Number of Quick search results</label>
+				<input type="number" name="finalCount" [(ngModel)]="searchSettingsForm.quickSearchCount">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group quantity">
+				<label class="form-control-label">Number of Power search results</label>
+				<input type="number" name="suggestCount" [(ngModel)]="searchSettingsForm.powerSearchCount">
+			</div>
+		</div>
+		<div class="submitSetting" (click)="onSubmit()">
+			<button>Save</button>
+		</div>
+	</form>
+</div>

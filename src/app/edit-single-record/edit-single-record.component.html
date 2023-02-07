@@ -1,0 +1,15 @@
+<div class="editUser">
+    <h4>EDIT DATA</h4>
+    <form action="">
+        <app-image-metadata-form [imageMetaDataForEdit]="editSingleRecord"></app-image-metadata-form>
+        <hr>
+        <div class="row form-row">
+            <div class="col-md-3">
+                <div class="editSubmit">
+                    <button (click)="closeEditClick()">Cancel</button>
+                    <button (click)="saveEditClick()">Save</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

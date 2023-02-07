@@ -1,0 +1,8 @@
+.row{
+    &.header{
+        margin-top: 1rem;
+        .col-md-6{
+            width: fit-content;
+        }
+    }
+}

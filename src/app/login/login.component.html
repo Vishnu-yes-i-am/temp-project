@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light main_nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img class="logo" src="../../assets/img/Rectangle 2.png" alt="logo"/></a>
+    <div class="loginNav">
+      <button (click)="openModal(loginFormModal)">Login</button>
+    </div>
+  </div>
+</nav>
+<section class="main">
+    
+</section>
+<ng-template #loginFormModal>
+  <div class="modal-content loginModel main_login">
+    <div class="modal-header imageclose">
+      <button type="button" data-bs-dismiss="modal" aria-label="Close">
+      <i class="fas fa-times"></i>
+      </button>
+      <div class="titleLogin">
+        <h2>Login</h2>
+        <p>Welcome to White River Production</p>
+      </div>
+    </div>
+    <div class="modal-body ">
+      <form>
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"/>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}"/>
+        </div>
+        <div class="form-group">
+          <input type="checkbox" name="" id="" />
+          <label for="">Remember Me</label>
+        </div>
+        <a href="#"><button (click)="doLogin()">Login</button></a>
+      </form>
+    </div>
+  </div>
+  
+</ng-template>

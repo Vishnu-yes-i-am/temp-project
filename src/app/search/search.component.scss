@@ -1,0 +1,17 @@
+.searchTab{
+    .row{
+        align-items: center;
+        form{
+            .quick-search{
+                margin-bottom: 0px;
+            }
+            .powerSubmit{
+                margin-right: 10px;
+            }
+            .settingTabShow{
+                cursor: pointer;
+                align-self: center;
+            }
+        }
+    }
+}

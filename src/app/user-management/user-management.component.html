@@ -1,0 +1,108 @@
+<section class="main_home">
+    <div class="container">
+      <div class="row userpage">
+        <div class="col-md-4">
+          <div class="userlist">
+            <div class="row userListHeading">
+              <div class="col-md-6">
+                <div class="listTiltle">
+                  <h5 class="userText" *ngIf="!search.show">User<span>&nbsp;({{users.length}})</span></h5>
+                  <h5 class="searchText" *ngIf="search.show"><div id="back" class="backSearch" (click)="exitSearch()"><i class="fas fa-arrow-left"></i></div>Search</h5>
+                </div>
+              </div>
+              <div class="col-md-6" *ngIf="!search.show">
+                <div class="listAction" >
+                  <div class="srchUser" id="searchUser" (click)="search.show = true;">
+                    <i class="fas fa-search"></i>
+                  </div>
+                  <div class="addUser">
+                    <i class="fas fa-plus" (click)="selectUser()"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12" *ngIf="search.show" >
+                <div class="searchbar">
+                  <input type="text" id="filterSearch" placeholder="UserName" [(ngModel)]="search.searchQuery" (keyup)="onKeyUp($event)">
+                  <div class="filterIcon" (click)="doSearch()">
+                    <i class="fas fa-filter"></i>
+                  </div>
+                  <div class="filterIcon" (click)="clearSearch()">
+                    <i class="fa-solid fa-rectangle-xmark"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row userListDetails">
+              <div class="col-md-12">
+                <ul class="users">
+                    <li *ngFor="let user of filteredUsers" class="user-item {{user.isSelected ? 'active' : ''}}" (click)="selectUser(user)">{{user.username}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="userDetails">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="close">
+
+                </div>
+                <div class="UserName">
+                  <h3>{{title}}</h3>
+                </div>
+                <form action="">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="">Username</label>
+                        <input
+                          type="text"
+                          name="username"
+                          placeholder="UserName"
+                          id="userName"
+                          [(ngModel)]="selectedUser.username"
+                          [ngModelOptions]="{standalone: true}"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="">Email Address</label>
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          placeholder="mail@gmail.com"
+                          [(ngModel)]="selectedUser.email"
+                          [ngModelOptions]="{standalone: true}"
+                        />
+                      </div>
+                      <div class="mailBtn">
+                        <button [disabled]="resetPasswordButtonState.isDisabled" (click)="generatePassword()">{{resetPasswordButtonState.text}}</button>
+                      </div>
+                    </div>
+                    <div class="col-md-6 funcForm">
+                      <label for="" class="funcTitle">Function</label>
+                      <div class="form-group" *ngFor="let permission of permissions">
+                        <input type="checkbox" [name]="permission.id" id="permission_{{permission.id}}" [checked]="selectedUser.permissions?.includes(permission.id)" (change)="togglePermission(permission.id)"/>
+                        <label for="">{{permission.name}}</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="userAccountAction">
+                            <button [disabled]="activeStateButton.isDisabled" (click)="toggleActiveState()">{{activeStateButton.text}}</button>
+                            <button class="userDelete" [disabled]="deleteButtonState.isDisabled" (click)="deleteUser()">{{deleteButtonState.text}}</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="submitChanges">
+                            <button [disabled]="saveButtonState.isDisabled" (click)="submitForm()">{{saveButtonState.text}}</button>
+                        </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
