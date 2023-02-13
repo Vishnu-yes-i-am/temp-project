@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://localhost:42069/',
+  API_URL: 'https://mysql-tunnel-example-dev.vishnubhai.workers.dev/',
   enableAutoSuggest: false
 };
 

@@ -75,6 +75,7 @@ export class AppComponent implements OnInit {
       this.toastrService.success('Saved successfully')
     }
     catch(err){
+      console.log(err);
       if(err instanceof HttpErrorResponse && err.status === 403)
         this.toastrService.error(err.error)
       else

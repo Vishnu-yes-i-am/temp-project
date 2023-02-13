@@ -119,7 +119,7 @@
 				<div class="col-md-12" >
 					<div class="uploadArea">
 						<div class="content" appDragDrop (files)="filesDropped($event)">
-							<input type="file" style="display:none" (change)="onFileSelected($event)" #fileUpload multiple />
+							<input type="file" style="display:none" id="myFile" (change)="onFileSelected($event)" #fileUpload multiple />
 							<div class="centerContent">
 								<div class="imgRef">
 									<img src="assets/img/Rectangle 5.png" alt="">
