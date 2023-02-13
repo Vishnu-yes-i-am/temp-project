@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   API_URL: 'https://mysql-tunnel-example-dev.vishnubhai.workers.dev/',
   enableAutoSuggest: false
 };
